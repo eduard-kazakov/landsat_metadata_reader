@@ -112,5 +112,11 @@ class LandsatMetadataReader():
             if file_name == self.bands[band]['file_name']:
                 return self.bands[band]
 
-metadata = LandsatMetadataReader('samples/LC08_L1TP_179018_20190606_20190619_01_T1/LC08_L1TP_179018_20190606_20190619_01_T1_MTL.txt')
-print metadata.get_band_metadata_by_file_name('LC08_L1TP_179018_20190606_20190619_01_T1_B11.TIF')
+    def get_band_metadata_by_number(self, number):
+        for band in self.bands.keys():
+            if str(number) == str(self.bands[band]['number']):
+                return self.bands[band]
+
+
+#metadata = LandsatMetadataReader('samples/LC08_L1TP_179018_20190606_20190619_01_T1/LC08_L1TP_179018_20190606_20190619_01_T1_MTL.txt')
+#print metadata.get_band_metadata_by_file_name('LC08_L1TP_179018_20190606_20190619_01_T1_B11.TIF')
